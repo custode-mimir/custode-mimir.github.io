@@ -149,10 +149,12 @@
   usarlo anche tu». MIMIR non è un prodotto da scaricare: mai «sul tuo
   computer», mai promesse di disponibilità.
 - Stati attuali (decisi dal Custode):
-  Funziona oggi: modello AI locale · voce Kokoro (in miglioramento) ·
-  «Ehi Mimir» · recap del mattino · mail e calendario (fonti in sola
-  lettura: posta, calendario, meteo) · MUNIN/memoria privata (in
-  miglioramento) · KVASIR (in miglioramento) · VAULT · BLACK BOX ·
+  Funziona oggi: modello AI locale · voce locale gratuita Kokoro (in
+  miglioramento) · «Ehi Mimir» · recap del mattino (in miglioramento) ·
+  mail, calendario e meteo in sola lettura · MUNIN/memoria privata (in
+  miglioramento) · KVASIR (in miglioramento) · VAULT (chiavi nel
+  portachiavi di macOS, separate dal resto) · BLACK BOX (registro di
+  ogni azione, solo in aggiunta) ·
   hub multi-dispositivo · conversazione unica · backup cifrato.
   In sviluppo: interruzione mentre MIMIR parla · voce più naturale ·
   GALAXY (In sviluppo ovunque, anche nello stato dei lavori).
