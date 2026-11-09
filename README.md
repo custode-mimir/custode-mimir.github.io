@@ -17,6 +17,7 @@ il resto sono dialoghi scritti a mano con dati inventati.
 | `favicon.svg` | L'icona della scheda del browser (runa ᛗ) |
 | `apple-touch-icon.png` | L'icona quando salvi il sito sulla schermata Home dell'iPhone |
 | `404.html` | La pagina che compare se l'indirizzo è sbagliato |
+| `robots.txt`, `sitemap.xml` | Per i motori di ricerca: tutto permesso, una sola pagina |
 | `og-image.png` | L'immagine che compare quando condividi il link (1200x630) |
 
 ## Pubblicazione
