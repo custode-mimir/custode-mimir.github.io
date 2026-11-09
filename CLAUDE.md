@@ -142,12 +142,24 @@
 - Niente link al repository GitHub nel sito (nemmeno nel footer).
 - Se un riquadro mostra più funzioni con stati diversi, si usa
   l'etichetta di quella meno avanti.
+- Se una funzione funziona ma la sto migliorando: etichetta «Funziona
+  oggi» più la riga piccola «in miglioramento» (classe .improving).
+- Testi al presente per tutto ciò che funziona; al futuro il resto.
+- Messaggio del sito: «guarda cosa sto costruendo, e un giorno potrai
+  usarlo anche tu». MIMIR non è un prodotto da scaricare: mai «sul tuo
+  computer», mai promesse di disponibilità.
 - Stati attuali (decisi dal Custode):
-  Funziona oggi: modello AI locale sul Mac.
-  In sviluppo: recap del mattino, memoria privata, memoria continua,
-  parola di attivazione e voce, MUNIN, KVASIR, GALAXY.
-  In programma: «Sto uscendo» (casa), ricerca, auto-riparazione notturna,
-  posta, casa, app per iPhone, SAGA, FORGE, LAB, VAULT, BLACK BOX.
+  Funziona oggi: modello AI locale · voce Kokoro (in miglioramento) ·
+  «Ehi Mimir» · recap del mattino · mail e calendario (fonti in sola
+  lettura: posta, calendario, meteo) · MUNIN/memoria privata (in
+  miglioramento) · KVASIR (in miglioramento) · VAULT · BLACK BOX ·
+  hub multi-dispositivo · conversazione unica · backup cifrato.
+  In sviluppo: interruzione mentre MIMIR parla · voce più naturale ·
+  GALAXY (In sviluppo ovunque, anche nello stato dei lavori).
+  In programma («Poi»): app per iPhone · memoria continua tra
+  dispositivi · casa («Sto uscendo») · SAGA (ricerca) · FORGE
+  (auto-riparazione notturna) · LAB.
+- Stato dei lavori: tre colonne «Funziona oggi», «In sviluppo», «Poi».
 - Niente numeri riempitivi (tipo "1 · 8 · 0 · 24/7") e niente nastro di
   parole giganti.
 

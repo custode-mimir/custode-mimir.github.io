@@ -132,6 +132,11 @@ body::after {
 .tag-s::before { background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
 /* In programma: oro spento, tratteggiato */
 .tag-p { color: var(--gold-dim); border-style: dashed; }
+/* «Funziona oggi» ma lo sto migliorando: riga piccola accanto o sotto l'etichetta */
+.improving { font-size: 11.5px; font-weight: 500; font-style: italic; letter-spacing: .02em; color: var(--gold-dim); text-transform: none; }
+.tag + .improving { margin-left: 8px; }
+.day h3 .tag + .improving, .mod-front .tag + .improving, .how .tag + .improving { margin-left: 0; }
+.how article .improving { margin-top: -4px; }
 
 /* ============ Capitoli ============ */
 .band { padding: 64px 0; position: relative; overflow: hidden; border-top: 1px solid var(--bronze-dark); }
