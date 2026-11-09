@@ -271,6 +271,8 @@ body::after {
 }
 
 /* ============ ᛞ Una giornata (compatta) ============ */
+/* su computer meno vuoto sotto la giornata (su telefono vale il padding di .band) */
+#giornata { padding-bottom: 28px; }
 .day { list-style: none; border-top: 1px solid var(--bronze-dark); }
 .day li { display: grid; grid-template-columns: 90px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--bronze-dark); align-items: baseline; }
 .day time { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--gold); letter-spacing: -0.02em; }
@@ -413,6 +415,7 @@ body::after {
 @media (max-width: 700px) {
   body { font-size: 16px; }
   .band { padding: 44px 0; }
+  #giornata { padding-bottom: 44px; }
   .statement { margin-bottom: 22px; }
   .sub-statement { margin: 34px 0 12px; }
   .logo { letter-spacing: .12em; font-size: 14px; }
