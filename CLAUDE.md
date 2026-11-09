@@ -9,6 +9,9 @@
 - Commit sempre con autore «il Custode» e email
   custode-mimir@users.noreply.github.com, mai altre email.
 - Niente link a profili personali (GitHub, LinkedIn, social).
+- Il repository è pubblico: mai password, token, chiavi API, email
+  personali o dati reali in nessun file. Se una modifica ne richiedesse
+  uno, fermati e chiedilo al Custode in chat prima di procedere.
 
 ## Come lavoriamo
 - Lavori solo su quello che ti scrivo in chat. Non aspettarti commenti
