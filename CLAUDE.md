@@ -93,6 +93,9 @@
 - I dati del saluto si calcolano al momento: mai salvati, mai inviati
   (nemmeno a GoatCounter).
 - Dopo il saluto si scelgono le altre scene; c'è sempre «Salta».
+- Voce spenta di default: la demo parte con i soli sottotitoli.
+  Accanto all'interruttore la nota piccola «Voce di prova del browser:
+  quella vera di MIMIR arriva presto».
 - Voce del browser (finché non arrivano gli audio veri): la voce italiana
   migliore disponibile, in quest'ordine: «Natural»/«Online» (Edge: Diego,
   Giuseppe) → «Premium»/«Enhanced»/«Avanzata» (Safari: Luca) → Google

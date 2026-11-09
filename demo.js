@@ -148,6 +148,7 @@ function level(v) { document.documentElement.style.setProperty("--level", v); }
 const wait = ms => new Promise(r => setTimeout(r, ms));
 
 // voce del browser (gratuita, integrata). Nella Fase 3 arriveranno gli audio veri.
+// La voce è SPENTA di default: la demo parte con i soli sottotitoli, la accendi tu con l'interruttore.
 // Scegliamo la voce italiana migliore disponibile, con questa priorità:
 //   4 = «Natural» o «Online» nel nome (Edge: Diego, Giuseppe)
 //   3 = «Premium», «Enhanced» o «Avanzata» (Safari, es. Luca)
@@ -181,10 +182,12 @@ if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged
 // demo solo con sottotitoli, interruttore «Voce» spento e una nota piccola
 function aggiornaVoce() {
   const nota = document.getElementById("voice-note");
+  const prova = document.getElementById("voice-hint");
   const manca = !voceScelta;
   voiceOn.disabled = manca;
   if (manca) voiceOn.checked = false;
   if (nota) nota.hidden = !manca;
+  if (prova) prova.hidden = manca; // senza voce italiana resta solo la nota qui sopra
 }
 vociPronte.then(aggiornaVoce);
 
