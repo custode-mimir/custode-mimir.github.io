@@ -93,6 +93,8 @@
 - I dati del saluto si calcolano al momento: mai salvati, mai inviati
   (nemmeno a GoatCounter).
 - Dopo il saluto si scelgono le altre scene; c'è sempre «Salta».
+- Alla fine (anche dopo «Salta») due tasti: «Riprova» (rifà la stessa
+  scena) e «Scopri come è fatto ↓» (porta a #come).
 - Voce spenta di default: la demo parte con i soli sottotitoli.
   Accanto all'interruttore la nota piccola «Voce di prova del browser:
   quella vera di MIMIR arriva presto».

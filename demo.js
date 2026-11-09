@@ -123,6 +123,8 @@ const chip     = document.getElementById("demo-cards");
 const playBtn  = document.getElementById("demo-play");
 const skipBtn  = document.getElementById("demo-skip");
 const sceneBar = document.getElementById("scene-bar");
+const endBar   = document.getElementById("end-bar");
+const againBtn = document.getElementById("demo-again");
 const voiceOn  = document.getElementById("voice-on");
 const wave     = document.getElementById("wave");
 
@@ -265,6 +267,7 @@ function finish(completed) {
   skipBtn.hidden = true;
   playBtn.hidden = true;
   sceneBar.hidden = false;
+  endBar.hidden = false; // alla fine: «Riprova» e «Scopri come è fatto ↓»
 }
 
 async function play(nome) {
@@ -275,6 +278,7 @@ async function play(nome) {
   playBtn.hidden = true;
   skipBtn.hidden = false;
   sceneBar.hidden = true;
+  endBar.hidden = true;
   document.querySelectorAll(".scene").forEach(b => b.classList.toggle("active", b.dataset.scene === nome));
 
   let ok;
@@ -289,6 +293,9 @@ async function play(nome) {
 
 /* ---------- 4. Tasti ---------- */
 playBtn.addEventListener("click", () => { conta("prova-mimir"); play("saluto"); });
+
+// «Riprova»: rifà la stessa scena appena finita
+againBtn.addEventListener("click", () => play(scenaCorrente || "saluto"));
 
 skipBtn.addEventListener("click", () => {
   stopAll();
