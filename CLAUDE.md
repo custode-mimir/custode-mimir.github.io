@@ -35,6 +35,10 @@
   Niente pagine separate, niente schede, niente slide.
 - Sito statico per GitHub Pages: solo HTML, CSS e JavaScript.
   Niente build, niente npm, niente framework. Percorsi relativi.
+  Unica eccezione: 404.html usa percorsi che partono da «/», perché
+  GitHub la mostra anche per indirizzi dentro sottocartelle.
+- 404.html: runa ᛗ, «Questa pagina non esiste. Nemmeno Mímir la
+  ricorda.» e tasto «Torna all'inizio».
 - Pagina corta: 4 capitoli, ognuno con la sua runa (filo conduttore):
   ᛗ Apertura = Demo · ᛞ Una giornata (compatta) · ᛟ Moduli + storia del
   nome (orbita + tessere) · ᛃ Come è fatto + Stato dei lavori (#stato)

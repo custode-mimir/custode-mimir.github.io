@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MIMIR — Pagina non trovata</title>
+  <meta name="author" content="il Custode">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0b0907">
+  <!-- GitHub Pages mostra questa pagina per qualsiasi indirizzo sbagliato, anche dentro
+       sottocartelle: per questo qui i percorsi partono da "/" e non sono relativi -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    if (/Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent)) document.documentElement.classList.add("apple");
+  </script>
+  <style>
+    .lost {
+      min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 22px; padding: 40px 20px; text-align: center;
+      background: radial-gradient(ellipse at 50% 30%, rgba(255, 217, 138, .10) 0%, rgba(255, 217, 138, 0) 60%);
+    }
+    .lost-rune {
+      font-size: 96px; line-height: 1; color: var(--gold); letter-spacing: 0;
+      text-shadow: 0 0 40px rgba(255, 217, 138, .45);
+    }
+    .lost-code { font-size: 12px; font-weight: 650; letter-spacing: .25em; color: var(--gold-dim); }
+    .lost h1 { font-size: clamp(24px, 3.4vw, 36px); line-height: 1.2; letter-spacing: -0.025em; max-width: 560px; }
+    .lost h1 span { color: var(--gold-dim); }
+  </style>
+</head>
+<body>
+  <main class="lost">
+    <span class="lost-rune rune" aria-hidden="true">ᛗ</span>
+    <p class="lost-code">ERRORE 404</p>
+    <h1>Questa pagina non esiste.<br><span>Nemmeno Mímir la ricorda.</span></h1>
+    <a class="btn gold" href="/">Torna all'inizio</a>
+  </main>
+</body>
+</html>
