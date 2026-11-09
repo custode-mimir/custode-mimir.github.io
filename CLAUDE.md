@@ -129,8 +129,9 @@
   a parlare.» Sottotitolo: «Ragiona in italiano e tiene i miei dati in casa.
   Presto ricorderà quello che conta. Lo sto costruendo un pezzo alla volta.»
   La storia del nome finisce con «Gli ho dato un Mac.»
-- Il tasto "Segui il progetto" (in alto, niente "Compra" o "Scarica")
-  porta all'ancora #stato, la sezione "Stato dei lavori".
+- Il tasto in alto si chiama «Stato dei lavori» (niente "Compra" o
+  "Scarica") e porta all'ancora #stato. Si rinominerà «Segui il
+  progetto» quando ci saranno i social. L'evento resta «segui-progetto».
 - Niente link a LinkedIn, da nessuna parte del sito.
 - Niente link al repository GitHub nel sito (nemmeno nel footer).
 - Se un riquadro mostra più funzioni con stati diversi, si usa
