@@ -132,8 +132,8 @@
   Prima di assegnarne una nuova, chiedi al Custode in chat.
 - In apertura c'è l'etichetta "Anteprima · in sviluppo".
 - Titolo dell'apertura (scelto dal Custode): «Vive sul mio Mac. Sta imparando
-  a parlare.» Sottotitolo: «Ragiona in italiano e tiene i miei dati in casa.
-  Presto ricorderà quello che conta. Lo sto costruendo un pezzo alla volta.»
+  a parlare.» Sottotitolo: «Ragiona in italiano, ricorda quello che conta e tiene
+  i miei dati in casa. Lo sto costruendo un pezzo alla volta.»
   La storia del nome finisce con «Gli ho dato un Mac.»
 - Il tasto in alto si chiama «Stato dei lavori» (niente "Compra" o
   "Scarica") e porta all'ancora #stato. Si rinominerà «Segui il
@@ -161,6 +161,11 @@
   In programma («Poi»): app per iPhone · memoria continua tra
   dispositivi · casa («Sto uscendo») · SAGA (ricerca) · FORGE
   (auto-riparazione notturna) · LAB.
+- FAQ (approvate dal Custode): ascolta sempre? · dove finiscono i dati? ·
+  iPhone? · scrivergli? (senza etichetta) · «Chi c'è dietro?» → «Il
+  Custode. Per ora preferisco lasciar parlare MIMIR.» (senza etichetta) ·
+  «Quando sarà disponibile?» → «Per ora è il mio assistente. Se diventerà
+  un'app per tutti, lo saprai seguendo il progetto.»
 - Stato dei lavori: tre colonne «Funziona oggi», «In sviluppo», «Poi».
 - Niente numeri riempitivi (tipo "1 · 8 · 0 · 24/7") e niente nastro di
   parole giganti.
