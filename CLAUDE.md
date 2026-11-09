@@ -1,3 +1,5 @@
+RISPONDI SEMPRE IN ITALIANO.
+
 # Regole per lavorare sul sito di MIMIR
 
 ## Anonimato totale
@@ -99,17 +101,20 @@
 - Dopo il saluto si scelgono le altre scene; c'è sempre «Salta».
 - Alla fine (anche dopo «Salta») due tasti: «Riprova» (rifà la stessa
   scena) e «Scopri come è fatto ↓» (porta a #come).
-- Voce spenta di default: la demo parte con i soli sottotitoli.
-  Accanto all'interruttore la nota piccola «Voce di prova del browser:
-  quella vera di MIMIR arriva presto».
-- Voce del browser (finché non arrivano gli audio veri): la voce italiana
-  migliore disponibile, in quest'ordine: «Natural»/«Online» (Edge: Diego,
-  Giuseppe) → «Premium»/«Enhanced»/«Avanzata» (Safari: Luca) → Google
-  (Chrome) → qualsiasi italiana. A parità, voci maschili. Si aspetta
-  l'evento voiceschanged. Velocità 1.0 e tono 1.0 (mai abbassarlo).
-- Se il browser non ha nessuna voce italiana: niente voce predefinita.
-  Demo solo con sottotitoli, interruttore «Voce» spento e la nota
-  «Il tuo browser non ha una voce italiana».
+- Voce = gli audio veri di MIMIR (voce Kokoro) in media/voce/, un file
+  per ogni battuta di MIMIR (campo «audio» in demo.js: mattina-1…4,
+  chiusura, recap-1…4, casa-1…3, memoria-1…3, anomalie-1…4, salta).
+  «Salta» durante il saluto → chiusura.mp3; nelle altre scene → salta.mp3.
+  Le battute «TU» e il saluto personalizzato restano solo testo.
+- Niente voce del browser (speechSynthesis): tolta del tutto.
+- Interruttore «Voce» acceso di default. Spento = solo sottotitoli.
+- iPhone: gli audio passano da un solo elemento <audio id="voce">,
+  sbloccato a ogni tocco sui tasti della demo; al primo tocco si
+  precaricano tutti gli audio.
+- Se un audio non si carica, la battuta resta in sottotitolo e la demo
+  va avanti.
+- L'onda segue il volume vero dell'audio (calcolato al precaricamento);
+  se non è disponibile si muove a caso.
 - Tutto il resto della demo è simulato: mai dati personali reali.
 
 ## Statistiche (GoatCounter, codice mimir-site)

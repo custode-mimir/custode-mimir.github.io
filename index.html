@@ -83,6 +83,8 @@
           <div class="orb-core"><div class="orb-sheen"></div></div>
         </div>
         <div class="wave" id="wave" aria-hidden="true"></div>
+        <!-- la voce di MIMIR: gli audio di media/voce/ passano tutti da qui (vedi demo.js) -->
+        <audio id="voce" preload="none" playsinline></audio>
         <p class="subtitle" aria-live="polite"><b id="sub-who">MIMIR</b><span id="sub-text">Premi il tasto: ti saluto usando solo quello che il tuo browser sa già.</span></p>
         <p class="info-chip" id="demo-cards" aria-live="polite"></p>
 
@@ -102,9 +104,7 @@
           </div>
         </div>
         <div class="stage-foot">
-          <label class="switch"><input type="checkbox" id="voice-on"><i></i> Voce</label>
-          <p class="voice-hint" id="voice-hint">Voce di prova del browser: quella vera di MIMIR arriva presto</p>
-          <p class="voice-note" id="voice-note" hidden>Il tuo browser non ha una voce italiana</p>
+          <label class="switch"><input type="checkbox" id="voice-on" checked><i></i> Voce</label>
           <p class="note">Simulazione con dati inventati · niente microfono · nulla esce dal tuo browser</p>
         </div>
       </div>

@@ -5,7 +5,9 @@
      non viene salvato e non viene mandato da nessuna parte
      (nemmeno a GoatCounter).
    - Il saluto è solo sottotitolo, scritto lettera per lettera, senza voce.
-     La voce (del browser, per ora) parte dalla frase successiva.
+     La voce parte dalla frase successiva: sono gli audio veri di MIMIR
+     (voce Kokoro) nella cartella media/voce/. Se un audio non si carica,
+     la battuta resta solo in sottotitolo.
    - Tutto il resto è scritto a mano, con dati inventati.
    Per modificare le scene, cambia MATTINA e SCENES qui sotto.
    ========================================================= */
@@ -72,46 +74,46 @@ const CHIUSURA = "L'ora, il giorno, il dispositivo e la zona li ho capiti dal tu
 
 // dopo il saluto: una mattina qualunque, valida per chiunque e a qualsiasi ora
 const MATTINA = [
-  { who: "mimir", text: "Ti faccio sentire come comincia una mattina con me." },
-  { who: "mimir", text: "Fuori ci sono quattordici gradi, cielo sereno. Giacca leggera e niente ombrello.",
+  { who: "mimir", text: "Ti faccio sentire come comincia una mattina con me.", audio: "mattina-1" },
+  { who: "mimir", text: "Fuori ci sono quattordici gradi, cielo sereno. Giacca leggera e niente ombrello.", audio: "mattina-2",
     card: "Meteo · 14° sereno" },
-  { who: "mimir", text: "Hai tre mail nuove. Una è importante: la palestra conferma il rinnovo.",
+  { who: "mimir", text: "Hai tre mail nuove. Una è importante: la palestra conferma il rinnovo.", audio: "mattina-3",
     card: "Posta · 3 nuove, 1 importante" },
-  { who: "mimir", text: "In agenda: riunione di team alle dieci, dentista alle diciotto.",
+  { who: "mimir", text: "In agenda: riunione di team alle dieci, dentista alle diciotto.", audio: "mattina-4",
     card: "Agenda · 10:00 riunione · 18:00 dentista" },
-  { who: "mimir", text: CHIUSURA }
+  { who: "mimir", text: CHIUSURA, audio: "chiusura" }
 ];
 
 const SCENES = {
   recap: [
     { who: "user",  text: "Ehi Mimir, buongiorno." },
-    { who: "mimir", text: "Buongiorno. Sono le sette e dieci." },
-    { who: "mimir", text: "Fuori ci sono quattordici gradi, cielo sereno.", card: "Meteo · 14° sereno" },
-    { who: "mimir", text: "In agenda: riunione di team alle dieci, dentista alle diciotto.", card: "Agenda · 2 impegni" },
+    { who: "mimir", text: "Buongiorno. Sono le sette e dieci.", audio: "recap-1" },
+    { who: "mimir", text: "Fuori ci sono quattordici gradi, cielo sereno.", audio: "recap-2", card: "Meteo · 14° sereno" },
+    { who: "mimir", text: "In agenda: riunione di team alle dieci, dentista alle diciotto.", audio: "recap-3", card: "Agenda · 2 impegni" },
     { who: "user",  text: "Il resto dopo, grazie." },
-    { who: "mimir", text: "Ricevuto. Lo riprendo quando vuoi." }
+    { who: "mimir", text: "Ricevuto. Lo riprendo quando vuoi.", audio: "recap-4" }
   ],
   casa: [
     { who: "user",  text: "Ehi Mimir, sto uscendo." },
-    { who: "mimir", text: "Spengo le luci del soggiorno e avvio il robot aspirapolvere.", card: "Casa · luci spente · robot in pulizia" },
-    { who: "mimir", text: "La finestra della cucina è aperta. Te lo segnalo." },
+    { who: "mimir", text: "Spengo le luci del soggiorno e avvio il robot aspirapolvere.", audio: "casa-1", card: "Casa · luci spente · robot in pulizia" },
+    { who: "mimir", text: "La finestra della cucina è aperta. Te lo segnalo.", audio: "casa-2" },
     { who: "user",  text: "Lasciala così." },
-    { who: "mimir", text: "D'accordo. Telecamera dell'ingresso attiva.", card: "Sicurezza · telecamera attiva" }
+    { who: "mimir", text: "D'accordo. Telecamera dell'ingresso attiva.", audio: "casa-3", card: "Sicurezza · telecamera attiva" }
   ],
   memoria: [
     { who: "user",  text: "Ehi Mimir, dove ho messo i documenti dell'auto?" },
-    { who: "mimir", text: "È una memoria privata. Vuoi che la sblocchi?" },
+    { who: "mimir", text: "È una memoria privata. Vuoi che la sblocchi?", audio: "memoria-1" },
     { who: "user",  text: "Sì." },
-    { who: "mimir", text: "Cassetto della scrivania, cartellina blu. L'hai annotato il tre marzo.", card: "MUNIN · memoria privata sbloccata" },
-    { who: "mimir", text: "Memoria di nuovo nascosta." }
+    { who: "mimir", text: "Cassetto della scrivania, cartellina blu. L'hai annotato il tre marzo.", audio: "memoria-2", card: "MUNIN · memoria privata sbloccata" },
+    { who: "mimir", text: "Memoria di nuovo nascosta.", audio: "memoria-3" }
   ],
   anomalie: [
     { who: "user",  text: "Ehi Mimir, com'è andata stanotte?" },
-    { who: "mimir", text: "Due anomalie. Una l'ho riparata io." },
-    { who: "mimir", text: "Il calendario si era disconnesso alle tre. Ricollegato.", card: "FORGE · sync ripristinata alle 03:04" },
-    { who: "mimir", text: "Il backup notturno non è partito: serve il tuo permesso per liberare spazio.", card: "Serve da te · backup" },
+    { who: "mimir", text: "Due anomalie. Una l'ho riparata io.", audio: "anomalie-1" },
+    { who: "mimir", text: "Il calendario si era disconnesso alle tre. Ricollegato.", audio: "anomalie-2", card: "FORGE · sync ripristinata alle 03:04" },
+    { who: "mimir", text: "Il backup notturno non è partito: serve il tuo permesso per liberare spazio.", audio: "anomalie-3", card: "Serve da te · backup" },
     { who: "user",  text: "Procedi." },
-    { who: "mimir", text: "Fatto. Annotato nella Black Box.", card: "BLACK BOX · azione registrata" }
+    { who: "mimir", text: "Fatto. Annotato nella Black Box.", audio: "anomalie-4", card: "BLACK BOX · azione registrata" }
   ]
 };
 
@@ -139,71 +141,109 @@ function conta(nome) {
 // onda sonora
 const bars = Array.from({ length: 28 }, () => wave.appendChild(document.createElement("i")));
 let waveTimer = null;
-function animateWave(on) {
+// con l'audio vero l'onda (e la sfera) seguono il volume reale della battuta;
+// se il volume non è disponibile, l'onda si muove a caso come prima
+function animateWave(on, nome) {
   clearInterval(waveTimer);
   if (!on) { bars.forEach(b => (b.style.height = "3px")); return; }
-  waveTimer = setInterval(() => bars.forEach(b => (b.style.height = 3 + Math.random() * 24 + "px")), 110);
+  waveTimer = setInterval(() => {
+    const v = nome && volumi[nome];
+    if (v) {
+      const x = v[Math.min(v.length - 1, Math.floor(player.currentTime / 0.05))] || 0;
+      bars.forEach((b, i) => (b.style.height = 3 + x * 24 * (0.55 + 0.45 * Math.abs(Math.sin(i * 1.7 + player.currentTime * 9))) + "px"));
+      level(0.2 + x * 0.8);
+    } else {
+      bars.forEach(b => (b.style.height = 3 + Math.random() * 24 + "px"));
+    }
+  }, 60);
 }
 // le sfere si "gonfiano" quando MIMIR parla (variabile --level in style.css)
 function level(v) { document.documentElement.style.setProperty("--level", v); }
 
 const wait = ms => new Promise(r => setTimeout(r, ms));
 
-// voce del browser (gratuita, integrata). Nella Fase 3 arriveranno gli audio veri.
-// La voce è SPENTA di default: la demo parte con i soli sottotitoli, la accendi tu con l'interruttore.
-// Scegliamo la voce italiana migliore disponibile, con questa priorità:
-//   4 = «Natural» o «Online» nel nome (Edge: Diego, Giuseppe)
-//   3 = «Premium», «Enhanced» o «Avanzata» (Safari, es. Luca)
-//   2 = voce italiana di Google (Chrome)
-//   1 = qualsiasi altra voce italiana
-// A parità di livello vincono le voci maschili (Diego, Giuseppe, Luca, Cosimo).
-let voceScelta = null;
+/* ---------- 4. La voce: gli audio veri di MIMIR (media/voce/) ---------- */
+// Un solo elemento <audio> (id="voce" in index.html). Su iPhone Safari blocca l'audio
+// che parte da solo: per questo lo "sblocchiamo" a ogni tocco su un tasto della demo
+// e precarichiamo tutti gli audio subito dopo il primo tocco.
+const player = document.getElementById("voce");
+const CARTELLA = "media/voce/";
+const NOMI_AUDIO = ["mattina-1", "mattina-2", "mattina-3", "mattina-4", "chiusura",
+  "recap-1", "recap-2", "recap-3", "recap-4", "casa-1", "casa-2", "casa-3",
+  "memoria-1", "memoria-2", "memoria-3", "anomalie-1", "anomalie-2", "anomalie-3", "anomalie-4", "salta"];
+const volumi = {};      // nome -> volume dell'audio ogni 50 ms (da 0 a 1), per muovere l'onda
+let precaricati = false;
+let sblocco = false;
 
-function punteggio(v) {
-  const n = v.name || "";
-  let p = /natural|online/i.test(n) ? 4 : /premium|enhanced|avanzat/i.test(n) ? 3 : /google/i.test(n) ? 2 : 1;
-  if (/diego|giuseppe|luca|cosimo|\bmale\b|maschil/i.test(n)) p += 0.5; // preferenza per le voci maschili
-  if (/^it[-_]IT/i.test(v.lang)) p += 0.1;                               // italiano d'Italia prima di it-CH
-  return p;
+// chiamata dentro il tocco: fa partire (muto) l'elemento audio, così poi può suonare da solo
+function sbloccaAudio() {
+  if (!player) return;
+  if (!player.src) {
+    sblocco = true;
+    player.muted = true;
+    player.src = CARTELLA + "salta.mp3";
+    const p = player.play();
+    if (p && p.then) p.then(() => { if (sblocco) player.pause(); }).catch(() => {}).finally(() => { if (sblocco) { player.muted = false; sblocco = false; } });
+  }
+  precarica();
 }
-function scegliVoce() {
-  const italiane = speechSynthesis.getVoices().filter(v => /^it([-_]|$)/i.test(v.lang));
-  italiane.sort((a, b) => punteggio(b) - punteggio(a));
-  voceScelta = italiane[0] || null;
-}
-// le voci a volte arrivano in ritardo: aspettiamo l'evento voiceschanged (al massimo 1,5 secondi)
-const vociPronte = !("speechSynthesis" in window) ? Promise.resolve() : new Promise(resolve => {
-  if (speechSynthesis.getVoices().length) { scegliVoce(); return resolve(); }
-  const fatto = () => { scegliVoce(); resolve(); };
-  speechSynthesis.addEventListener("voiceschanged", fatto, { once: true });
-  setTimeout(fatto, 1500);
-});
-if ("speechSynthesis" in window) speechSynthesis.addEventListener("voiceschanged", () => { scegliVoce(); aggiornaVoce(); });
 
-// se il browser non ha nessuna voce italiana: niente voce predefinita (sarebbe inglese o robotica),
-// demo solo con sottotitoli, interruttore «Voce» spento e una nota piccola
-function aggiornaVoce() {
-  const nota = document.getElementById("voice-note");
-  const prova = document.getElementById("voice-hint");
-  const manca = !voceScelta;
-  voiceOn.disabled = manca;
-  if (manca) voiceOn.checked = false;
-  if (nota) nota.hidden = !manca;
-  if (prova) prova.hidden = manca; // senza voce italiana resta solo la nota qui sopra
+// scarica tutti gli audio (così sono pronti) e ne calcola il volume per l'onda
+function precarica() {
+  if (precaricati || !window.fetch) return;
+  precaricati = true;
+  const Offline = window.OfflineAudioContext || window.webkitOfflineAudioContext;
+  NOMI_AUDIO.forEach(nome => {
+    fetch(CARTELLA + nome + ".mp3")
+      .then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+      .then(buf => {
+        if (!Offline) return;
+        const ctx = new Offline(1, 1, 44100);
+        return new Promise((ok, ko) => { const p = ctx.decodeAudioData(buf, ok, ko); if (p && p.catch) p.catch(ko); });
+      })
+      .then(audio => { if (audio) volumi[nome] = inviluppo(audio); })
+      .catch(() => {}); // se manca, l'onda si muove come prima e l'audio prova comunque a partire
+  });
 }
-vociPronte.then(aggiornaVoce);
 
-function speak(text) {
-  return new Promise(async resolve => {
-    if (!voiceOn.checked || !("speechSynthesis" in window)) return setTimeout(resolve, 900 + text.length * 45);
-    await vociPronte;
-    if (!voceScelta) return setTimeout(resolve, 900 + text.length * 45); // nessuna voce italiana: solo sottotitoli
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "it-IT";
-    if (voceScelta) u.voice = voceScelta;
-    u.rate = 1.0; u.pitch = 1.0; // tono naturale: abbassarlo rende la voce più robotica
-    u.onend = resolve; u.onerror = resolve;
-    speechSynthesis.speak(u);
+// volume (RMS) ogni 50 ms, normalizzato tra 0 e 1
+function inviluppo(audio) {
+  const dati = audio.getChannelData(0), passo = Math.floor(audio.sampleRate * 0.05), out = [];
+  let max = 0;
+  for (let i = 0; i < dati.length; i += passo) {
+    let somma = 0; const fine = Math.min(i + passo, dati.length);
+    for (let j = i; j < fine; j++) somma += dati[j] * dati[j];
+    const v = Math.sqrt(somma / (fine - i)); out.push(v); if (v > max) max = v;
+  }
+  return out.map(v => (max ? v / max : 0));
+}
+
+let fermaVoce = null; // serve a interrompere l'audio se premi «Salta» o scegli un'altra scena
+
+// fa dire una battuta a MIMIR. Si risolve con true se l'audio è stato suonato,
+// false se la battuta resta solo sottotitolo (voce spenta, audio mancante o bloccato)
+function speak(step) {
+  return new Promise(resolve => {
+    const pausa = () => setTimeout(() => resolve(false), 900 + step.text.length * 45);
+    if (!voiceOn.checked || !step.audio || !player) return pausa();
+    let finito = false;
+    const chiudi = suonato => {
+      if (finito) return; finito = true;
+      clearTimeout(scorta); player.onended = player.onerror = null; fermaVoce = null;
+      animateWave(false);
+      resolve(suonato);
+    };
+    const nonVa = () => { if (finito) return; finito = true; clearTimeout(scorta); player.pause(); player.onended = player.onerror = null; fermaVoce = null; animateWave(false); pausa(); };
+    // rete lenta o audio bloccato: dopo un po' si va avanti comunque
+    const scorta = setTimeout(() => nonVa(), 15000);
+    fermaVoce = () => { player.pause(); chiudi(false); };
+    sblocco = false; player.muted = false;
+    player.onended = () => chiudi(true);
+    player.onerror = nonVa;
+    player.src = CARTELLA + step.audio + ".mp3";
+    const p = player.play();
+    const parte = () => { if (!finito) { setState("speaking"); level(1); animateWave(true, step.audio); } };
+    if (p && p.then) p.then(parte).catch(nonVa); else parte();
   });
 }
 
@@ -244,11 +284,11 @@ async function runLines(lines, id) {
       showLine("user", step.text);
       await wait(1100 + step.text.length * 30);
     } else {
-      const conVoce = voiceOn.checked && "speechSynthesis" in window && !!voceScelta;
-      setState(conVoce ? "speaking" : null); level(conVoce ? 1 : 0.15); animateWave(conVoce);
+      // l'onda si muove solo se l'audio parte davvero (lo decide speak)
+      setState(null); level(0.15); animateWave(false);
       showLine("mimir", step.text);
-      await speak(step.text);
-      animateWave(false); level(0.15);
+      await speak(step);
+      setState(null); animateWave(false); level(0.15);
       await wait(400);
     }
   }
@@ -257,7 +297,7 @@ async function runLines(lines, id) {
 
 function stopAll() {
   runId++;
-  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (fermaVoce) fermaVoce();
   animateWave(false); level(0); setState(null);
 }
 
@@ -291,21 +331,28 @@ async function play(nome) {
   if (id === runId) finish(ok);
 }
 
-/* ---------- 4. Tasti ---------- */
-playBtn.addEventListener("click", () => { conta("prova-mimir"); play("saluto"); });
+/* ---------- 5. Tasti (ogni tocco sblocca anche l'audio per iPhone) ---------- */
+playBtn.addEventListener("click", () => { sbloccaAudio(); conta("prova-mimir"); play("saluto"); });
 
 // «Riprova»: rifà la stessa scena appena finita
-againBtn.addEventListener("click", () => play(scenaCorrente || "saluto"));
+againBtn.addEventListener("click", () => { sbloccaAudio(); play(scenaCorrente || "saluto"); });
 
 skipBtn.addEventListener("click", () => {
+  sbloccaAudio();
   stopAll();
-  // se salti il saluto, resta comunque la frase onesta sui dati del browser
-  showLine("mimir", scenaCorrente === "saluto" ? CHIUSURA : "Va bene, mi fermo qui.");
+  // se salti il saluto, resta comunque la frase onesta sui dati del browser (con il suo audio)
+  const battuta = scenaCorrente === "saluto"
+    ? { who: "mimir", text: CHIUSURA, audio: "chiusura" }
+    : { who: "mimir", text: "Va bene, mi fermo qui.", audio: "salta" };
+  showLine("mimir", battuta.text);
   finish(false);
+  const id = runId;
+  speak(battuta).then(() => { if (id === runId) { setState(null); level(0); } });
 });
 
 document.querySelectorAll(".scene").forEach(btn => {
   btn.addEventListener("click", () => {
+    sbloccaAudio();
     conta("scena-" + btn.dataset.scene);
     play(btn.dataset.scene);
   });

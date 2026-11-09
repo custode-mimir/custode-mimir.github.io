@@ -10,9 +10,10 @@ il resto sono dialoghi scritti a mano con dati inventati.
 |---|---|
 | `index.html` | Struttura e testi della pagina (4 capitoli) |
 | `style.css` | Colori, font e impaginazione. La palette (nero caldo e oro) è in cima al file |
-| `demo.js` | La demo dell'apertura: il saluto personalizzato e le scene (`MATTINA`, `SCENES`) |
+| `demo.js` | La demo dell'apertura: il saluto personalizzato, le scene (`MATTINA`, `SCENES`) e gli audio della voce |
 | `site.js` | Tessere che si girano su telefono, menu dei capitoli, runa attiva |
 | `contatore.js` | Le statistiche con GoatCounter (solo visite ed eventi con nome fisso) |
+| `media/voce/` | Gli audio veri di MIMIR (voce Kokoro), uno per ogni battuta della demo |
 | `fonts/` | I font Inter e Noto Sans Runic, salvati qui per non chiamare Google |
 | `favicon.svg` | L'icona della scheda del browser (runa ᛗ) |
 | `apple-touch-icon.png` | L'icona quando salvi il sito sulla schermata Home dell'iPhone |
