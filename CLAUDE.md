@@ -179,19 +179,15 @@ RISPONDI SEMPRE IN ITALIANO.
 - Messaggio del sito: «guarda cosa sto costruendo, e un giorno potrai
   usarlo anche tu». MIMIR non è un prodotto da scaricare: mai «sul tuo
   computer», mai promesse di disponibilità.
-- Stati attuali (decisi dal Custode):
-  Funziona oggi: modello AI locale · voce locale gratuita Kokoro (in
-  miglioramento) · «Ehi Mimir» · recap del mattino (in miglioramento) ·
-  mail, calendario e meteo in sola lettura · MUNIN/memoria privata (in
-  miglioramento) · KVASIR (in miglioramento) · VAULT (chiavi nel
-  portachiavi di macOS, separate dal resto) · BLACK BOX (registro di
-  ogni azione, solo in aggiunta) ·
-  hub multi-dispositivo · conversazione unica · backup cifrato.
-  In sviluppo: interruzione mentre MIMIR parla · voce più naturale ·
-  GALAXY (In sviluppo ovunque, anche nello stato dei lavori).
-  In programma («Poi»): app per iPhone · memoria continua tra
-  dispositivi · casa («Sto uscendo») · SAGA (ricerca) · FORGE
-  (auto-riparazione notturna) · LAB.
+- Stati attuali (decisi dal Custode, copia di stato.json):
+  Tessere: Funziona oggi = MUNIN (in miglioramento), KVASIR (in
+  miglioramento), GALAXY, VAULT, BLACK BOX · In programma = SAGA, FORGE, LAB.
+  Stato dei lavori: Funziona oggi = voce locale (in miglioramento) ·
+  «Ehi Mimir» · conversazione a mani libere · posta, calendario e meteo
+  in sola lettura · recap (in miglioramento) · domande di cultura
+  generale · profilo demo. In sviluppo = interrompere MIMIR a voce
+  mentre parla · una voce più naturale. Poi = app iPhone · casa ·
+  messaggi · ricerca sul web.
 - FAQ (approvate dal Custode): ascolta sempre? · dove finiscono i dati? ·
   iPhone? · scrivergli? (senza etichetta) · «Chi c'è dietro?» → «Il
   Custode. Per ora preferisco lasciar parlare MIMIR.» (senza etichetta) ·

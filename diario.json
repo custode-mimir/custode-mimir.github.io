@@ -8,10 +8,13 @@
     "Niente dati personali, niente nomi, niente link. Ogni voce tranne l'ultima finisce con una virgola."
   ],
   "voci": [
-    { "data": "2026-11-09", "titolo": "Il sito è online", "descrizione": "Prima pubblicazione della vetrina di MIMIR, con la demo e lo stato dei lavori." },
-    { "data": "2026-11-09", "titolo": "Stato dei lavori aggiornato", "descrizione": "Molte funzioni passano a «Funziona oggi»: voce, «Ehi Mimir», recap, VAULT e BLACK BOX." },
-    { "data": "2026-11-09", "titolo": "La demo ha la voce vera", "descrizione": "Le battute della demo usano gli audio di MIMIR registrati con Kokoro." },
-    { "data": "2026-11-11", "titolo": "Saluto parlato", "descrizione": "Il saluto della demo ora è detto dalla voce di MIMIR, pezzo per pezzo." },
-    { "data": "2026-11-11", "titolo": "Nasce il diario dei lavori", "descrizione": "Da oggi qui trovi le novità del progetto, dalla più recente." }
+    { "data": "2026-10-26", "titolo": "La voce", "descrizione": "MIMIR parla con una voce sua, generata interamente sul Mac, senza servizi esterni." },
+    { "data": "2026-10-27", "titolo": "Conversazione a mani libere", "descrizione": "Si parla con MIMIR senza tasti: ascolta, capisce quando hai finito e risponde a voce, frase per frase." },
+    { "data": "2026-10-27", "titolo": "Posta, calendario e meteo in sola lettura", "descrizione": "MIMIR legge impegni, posta e meteo e te li racconta; non scrive, non invia e non sposta nulla." },
+    { "data": "2026-10-28", "titolo": "La parola di attivazione", "descrizione": "Basta dire «Ehi Mimir»: MIMIR resta acceso in sottofondo e si sveglia quando lo chiami." },
+    { "data": "2026-10-29", "titolo": "Il recap", "descrizione": "Su richiesta, MIMIR riassume la giornata: impegni, posta e meteo in un unico discorso." },
+    { "data": "2026-11-11", "titolo": "Avvio da maggiordomo", "descrizione": "All'apertura MIMIR saluta con una sola frase e parla dei suoi sistemi solo se qualcosa non va." },
+    { "data": "2026-11-11", "titolo": "Profilo demo", "descrizione": "MIMIR ha un profilo con dati finti, separato da quello vero, per mostrarlo in video senza dati personali." },
+    { "data": "2026-11-11", "titolo": "Ora, data e recap esatti", "descrizione": "Ora, data, impegni e meteo li compone MIMIR direttamente dai dati, con orari e numeri detti in parole." }
   ]
 }
