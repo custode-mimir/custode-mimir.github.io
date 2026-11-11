@@ -304,7 +304,9 @@
         </div>
 
 
-        <!-- Il tasto in alto «Stato dei lavori» porta qui -->
+        <!-- Il tasto in alto «Stato dei lavori» porta qui.
+             Le voci qui sotto e le etichette delle tessere sono una copia di stato.json:
+             dati.js le aggiorna da quel file appena la pagina si apre. -->
         <div id="stato" class="anchor"></div>
         <h3 class="sub-statement">Stato dei lavori</h3>
         <ol class="roadmap">
@@ -321,6 +323,13 @@
             <ul><li>App per iPhone</li><li>Memoria continua tra dispositivi</li><li>Casa: «Sto uscendo»</li><li>SAGA · ricerca</li><li>FORGE · auto-riparazione</li><li>LAB · esperimenti</li></ul>
           </li>
         </ol>
+
+        <!-- Diario dei lavori: le voci arrivano da diario.json (vedi dati.js), dalla più recente -->
+        <div id="diario" class="diario" hidden>
+          <h3 class="sub-statement">Diario dei lavori</h3>
+          <ol class="diario-lista" id="diario-lista"></ol>
+          <button class="diario-tutto" id="diario-tutto" type="button" hidden></button>
+        </div>
 
 
         <div class="two-col">
@@ -366,6 +375,8 @@
 
   <script src="demo.js"></script>
   <script src="site.js"></script>
+  <!-- etichette dei moduli e stato dei lavori da stato.json, diario da diario.json -->
+  <script src="dati.js"></script>
   <!-- statistiche: GoatCounter (mimir-site), niente cookie e nessun dato personale. Vedi contatore.js -->
   <script src="contatore.js"></script>
 </body>

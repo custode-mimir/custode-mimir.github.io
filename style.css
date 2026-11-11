@@ -410,6 +410,18 @@ body::after {
 .footer .wrap { border-top: 1px solid var(--bronze-dark); padding-top: 20px; }
 .footer .fine { margin-top: 8px; letter-spacing: .08em; text-transform: uppercase; }
 
+/* ============ Diario dei lavori (da diario.json) ============ */
+.diario[hidden] { display: none; }
+.diario-lista { list-style: none; border-top: 1px solid var(--bronze-dark); }
+.diario-lista li { display: grid; grid-template-columns: 110px 1fr; gap: 18px; padding: 12px 0; border-bottom: 1px solid var(--bronze-dark); align-items: baseline; }
+.diario-lista time { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--gold); white-space: nowrap; }
+.diario-lista h4 { font-size: 16px; font-weight: 600; color: var(--cream); }
+.diario-lista p { font-size: 14.5px; color: var(--cream-soft); }
+.diario-extra { display: none !important; }
+.diario.aperto .diario-extra { display: grid !important; }
+.diario-tutto { margin-top: 12px; background: none; border: 0; padding: 6px 0; color: var(--gold); font: 600 14px/1.2 var(--font); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.diario-tutto[hidden] { display: none; }
+
 /* ============ Telefono e tablet ============ */
 @media (max-width: 900px) {
   .how { grid-template-columns: 1fr 1fr; }
@@ -450,6 +462,7 @@ body::after {
   .stage-orb { margin: 12px 0 6px; }
   .subtitle { min-height: 5.6em; }
   .day li { grid-template-columns: 60px 1fr; gap: 12px; padding: 14px 0; }
+  .diario-lista li { grid-template-columns: 1fr; gap: 2px; }
   .day time { font-size: 17px; }
   .day h3 { font-size: 16.5px; }
   .day p { font-size: 14.5px; line-height: 1.4; }

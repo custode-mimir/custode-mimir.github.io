@@ -24,6 +24,23 @@ RISPONDI SEMPRE IN ITALIANO.
 - Rispondi sempre in italiano, in modo semplice: sono alle prime armi.
 - Dopo ogni modifica scrivi in massimo 3 righe cosa hai cambiato.
 
+## Blocco «AGGIORNAMENTO SITO»
+- Quando il Custode incolla in chat un blocco «AGGIORNAMENTO SITO»,
+  applicalo SOLO a diario.json e stato.json, pubblica su main e fermati.
+- diario.json: ogni voce ha data (AAAA-MM-GG), titolo breve (max 60
+  caratteri) e una riga di descrizione (max 140). Il sito le mostra
+  dalla più recente (le prime 5, poi «Vedi tutto il diario»).
+- stato.json: «moduli» = etichette delle tessere; «lavori» = voci dello
+  «Stato dei lavori» (nome max 50 caratteri). Valori di «stato» ammessi
+  solo "oggi", "sviluppo", "programma"; «migliora»: true aggiunge «in
+  miglioramento» (solo con "oggi").
+- Niente testo libero lungo, niente dati personali, niente link.
+  Se il blocco ne contiene, fermati e chiedi.
+- In index.html c'è una copia delle stesse etichette (serve se il file
+  non si carica): quando cambi stato.json aggiorna anche quella copia,
+  e la sezione «Stati attuali» qui sotto.
+- Controlla che i due file restino JSON valido prima di pubblicare.
+
 ## Pubblicazione
 - Ogni modifica va pubblicata subito sul branch main, così GitHub Pages
   aggiorna il sito (https://custode-mimir.github.io/) in circa
@@ -180,7 +197,9 @@ RISPONDI SEMPRE IN ITALIANO.
   Custode. Per ora preferisco lasciar parlare MIMIR.» (senza etichetta) ·
   «Quando sarà disponibile?» → «Per ora è il mio assistente. Se diventerà
   un'app per tutti, lo saprai seguendo il progetto.»
-- Stato dei lavori: tre colonne «Funziona oggi», «In sviluppo», «Poi».
+- Stato dei lavori: tre colonne «Funziona oggi», «In sviluppo», «Poi»,
+  costruite da stato.json (dati.js). Sotto c'è il «Diario dei lavori»
+  da diario.json.
 - Niente numeri riempitivi (tipo "1 · 8 · 0 · 24/7") e niente nastro di
   parole giganti.
 

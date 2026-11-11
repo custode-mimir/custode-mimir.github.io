@@ -1,0 +1,17 @@
+{
+  "_come_aggiungere": [
+    "DIARIO DEI LAVORI. Per aggiungere una voce copia una riga di «voci» e cambia i valori.",
+    "data: giorno nel formato AAAA-MM-GG (esempio 2026-11-11).",
+    "titolo: frase breve, massimo 60 caratteri.",
+    "descrizione: una riga, massimo 140 caratteri.",
+    "L'ordine non conta: il sito le mostra sempre dalla più recente (nello stesso giorno, prima l'ultima scritta).",
+    "Niente dati personali, niente nomi, niente link. Ogni voce tranne l'ultima finisce con una virgola."
+  ],
+  "voci": [
+    { "data": "2026-11-09", "titolo": "Il sito è online", "descrizione": "Prima pubblicazione della vetrina di MIMIR, con la demo e lo stato dei lavori." },
+    { "data": "2026-11-09", "titolo": "Stato dei lavori aggiornato", "descrizione": "Molte funzioni passano a «Funziona oggi»: voce, «Ehi Mimir», recap, VAULT e BLACK BOX." },
+    { "data": "2026-11-09", "titolo": "La demo ha la voce vera", "descrizione": "Le battute della demo usano gli audio di MIMIR registrati con Kokoro." },
+    { "data": "2026-11-11", "titolo": "Saluto parlato", "descrizione": "Il saluto della demo ora è detto dalla voce di MIMIR, pezzo per pezzo." },
+    { "data": "2026-11-11", "titolo": "Nasce il diario dei lavori", "descrizione": "Da oggi qui trovi le novità del progetto, dalla più recente." }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "_come_aggiungere": [
+    "STATO DEI LAVORI. Valori ammessi per «stato»: \"oggi\", \"sviluppo\", \"programma\". Nient'altro.",
+    "oggi = Funziona oggi · sviluppo = In sviluppo · programma = In programma (colonna «Poi»).",
+    "migliora: true aggiunge la riga piccola «in miglioramento» (solo con stato \"oggi\").",
+    "moduli: le etichette delle tessere. Cambia solo «stato» e «migliora», non i nomi.",
+    "lavori: le voci dello «Stato dei lavori». Per aggiungerne una copia una riga e cambia nome e stato.",
+    "nome: massimo 50 caratteri. Niente dati personali. Ogni riga tranne l'ultima finisce con una virgola."
+  ],
+  "moduli": {
+    "munin":     { "stato": "oggi", "migliora": true },
+    "kvasir":    { "stato": "oggi", "migliora": true },
+    "saga":      { "stato": "programma" },
+    "forge":     { "stato": "programma" },
+    "lab":       { "stato": "programma" },
+    "galaxy":    { "stato": "sviluppo" },
+    "vault":     { "stato": "oggi" },
+    "black-box": { "stato": "oggi" }
+  },
+  "lavori": [
+    { "nome": "Modello AI locale", "stato": "oggi" },
+    { "nome": "Voce locale gratuita (Kokoro)", "stato": "oggi", "migliora": true },
+    { "nome": "«Ehi Mimir»", "stato": "oggi" },
+    { "nome": "Recap del mattino", "stato": "oggi", "migliora": true },
+    { "nome": "Mail, calendario e meteo, in sola lettura", "stato": "oggi" },
+    { "nome": "Memoria privata (MUNIN)", "stato": "oggi", "migliora": true },
+    { "nome": "KVASIR", "stato": "oggi", "migliora": true },
+    { "nome": "VAULT", "stato": "oggi" },
+    { "nome": "BLACK BOX", "stato": "oggi" },
+    { "nome": "Hub multi-dispositivo", "stato": "oggi" },
+    { "nome": "Conversazione unica", "stato": "oggi" },
+    { "nome": "Backup cifrato", "stato": "oggi" },
+    { "nome": "Interruzione mentre MIMIR parla", "stato": "sviluppo" },
+    { "nome": "Voce più naturale", "stato": "sviluppo" },
+    { "nome": "Interfaccia GALAXY", "stato": "sviluppo" },
+    { "nome": "App per iPhone", "stato": "programma" },
+    { "nome": "Memoria continua tra dispositivi", "stato": "programma" },
+    { "nome": "Casa: «Sto uscendo»", "stato": "programma" },
+    { "nome": "SAGA · ricerca", "stato": "programma" },
+    { "nome": "FORGE · auto-riparazione", "stato": "programma" },
+    { "nome": "LAB · esperimenti", "stato": "programma" }
+  ]
+}
