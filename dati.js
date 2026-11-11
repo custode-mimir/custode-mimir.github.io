@@ -95,10 +95,27 @@
       lista.append(li);
     });
 
+    // «Vedi tutto il diario» ↔ «Mostra meno». Richiudendo, la pagina torna
+    // dolcemente all'inizio del diario (senza animazione se le animazioni sono disattivate)
     if (altro && voci.length > MAX_DIARIO) {
-      altro.textContent = "Vedi tutto il diario (" + voci.length + " voci)";
+      const tutto = "Vedi tutto il diario (" + voci.length + " voci)";
+      const aggiorna = () => {
+        const aperto = box.classList.contains("aperto");
+        altro.textContent = aperto ? "Mostra meno" : tutto;
+        altro.setAttribute("aria-expanded", aperto ? "true" : "false");
+      };
+      altro.setAttribute("aria-controls", "diario-lista");
+      altro.addEventListener("click", () => {
+        const apri = !box.classList.contains("aperto");
+        box.classList.toggle("aperto", apri);
+        aggiorna();
+        if (!apri) {
+          const fermo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          box.scrollIntoView({ behavior: fermo ? "auto" : "smooth", block: "start" });
+        }
+      });
+      aggiorna();
       altro.hidden = false;
-      altro.addEventListener("click", () => { box.classList.add("aperto"); altro.hidden = true; });
     }
     box.hidden = false;
   }

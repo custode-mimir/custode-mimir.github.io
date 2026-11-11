@@ -10,7 +10,10 @@ RISPONDI SEMPRE IN ITALIANO.
   Metadati (meta author ecc.): «il Custode».
 - Commit sempre con autore «il Custode» e email
   custode-mimir@users.noreply.github.com, mai altre email.
-- Niente link a profili personali (GitHub, LinkedIn, social).
+- Niente link a profili personali. Ammessi SOLO i social del progetto:
+  YouTube https://www.youtube.com/@ehimimir · Instagram
+  https://www.instagram.com/custode.mimir · TikTok
+  https://www.tiktok.com/@ehimimir. LinkedIn no, GitHub no.
 - Il repository è pubblico: mai password, token, chiavi API, email
   personali o dati reali in nessun file. Se una modifica ne richiedesse
   uno, fermati e chiedilo al Custode in chat prima di procedere.
@@ -29,7 +32,8 @@ RISPONDI SEMPRE IN ITALIANO.
   applicalo SOLO a diario.json e stato.json, pubblica su main e fermati.
 - diario.json: ogni voce ha data (AAAA-MM-GG), titolo breve (max 60
   caratteri) e una riga di descrizione (max 140). Il sito le mostra
-  dalla più recente (le prime 5, poi «Vedi tutto il diario»).
+  dalla più recente (le prime 5, poi «Vedi tutto il diario», che
+  diventa «Mostra meno» e richiudendo torna all'inizio del diario).
 - stato.json: «moduli» = etichette delle tessere; «lavori» = voci dello
   «Stato dei lavori» (nome max 50 caratteri). Valori di «stato» ammessi
   solo "oggi", "sviluppo", "programma"; «migliora»: true aggiunge «in
@@ -64,6 +68,8 @@ RISPONDI SEMPRE IN ITALIANO.
   + privacy in breve + nota firmata + domande.
 - Niente doppioni e niente sezioni lunghe: tolti «Chiamalo/Parla/Ascolta»,
   il disegno Mac/iPhone, la tabella privacy grande, il blocco finale.
+- Ricaricando la pagina si riparte sempre dall'inizio (niente
+  posizione ricordata); con un link a una sezione (es. #stato) si va lì.
 - Mai nascondere contenuti in attesa dello scorrimento (niente effetti
   "compare quando scorri"): tutto deve essere visibile subito.
 - Stile: personale, non da Apple. Tutto su nero caldo, niente fasce
@@ -149,7 +155,9 @@ RISPONDI SEMPRE IN ITALIANO.
   (pagina, titolo, referrer) e il nome fisso degli eventi.
 - Eventi: «prova-mimir» (tasto della demo) · «scena-<nome>» (scelta di una
   scena: saluto, recap, casa, memoria, anomalie) · «demo-completata»
-  (scena arrivata alla fine) · «segui-progetto» · «tessera-<modulo>»
+  (scena arrivata alla fine) · «segui-progetto» (apertura del menu social)
+  · «segui-youtube», «segui-instagram», «segui-tiktok» (clic su un social,
+  ovunque nel sito) · «tessera-<modulo>»
   (tessera girata, su computer e telefono) · «menu-capitoli».
 - Nella privacy c'è la riga: «Conto le visite con GoatCounter: niente
   cookie, nessun dato personale.»
@@ -166,10 +174,15 @@ RISPONDI SEMPRE IN ITALIANO.
   a parlare.» Sottotitolo: «Ragiona in italiano, ricorda quello che conta e tiene
   i miei dati in casa. Lo sto costruendo un pezzo alla volta.»
   La storia del nome finisce con «Gli ho dato un Mac.»
-- Il tasto in alto si chiama «Stato dei lavori» (niente "Compra" o
-  "Scarica") e porta all'ancora #stato. Si rinominerà «Segui il
-  progetto» quando ci saranno i social. L'evento resta «segui-progetto».
-- Niente link a LinkedIn, da nessuna parte del sito.
+- Il tasto in alto si chiama «Segui il progetto» (niente "Compra" o
+  "Scarica") e apre un piccolo menu con le icone di YouTube, Instagram e
+  TikTok (anche su telefono). Le stesse icone sono in fondo alla pagina e
+  alla fine della demo, accanto a «Riprova».
+- Icone dei social: SVG disegnati nel sito (sprite in cima a index.html),
+  niente immagini o script esterni. Crema, oro al passaggio del mouse.
+  Link in una nuova scheda con rel="noopener".
+- Niente link a LinkedIn, da nessuna parte del sito. I social del
+  progetto (YouTube, Instagram, TikTok) invece sono ammessi.
 - Niente link al repository GitHub nel sito (nemmeno nel footer).
 - Se un riquadro mostra più funzioni con stati diversi, si usa
   l'etichetta di quella meno avanti.

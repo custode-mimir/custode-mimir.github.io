@@ -41,19 +41,30 @@ if (tessere.length && !senzaAnimazioni && "IntersectionObserver" in window) {
   osserva.observe(tessere[0]);
 }
 
-/* ---------- menu dei capitoli (solo telefono) ---------- */
+/* ---------- menu dei capitoli (solo telefono) e menu «Segui il progetto» ---------- */
+/* Si apre un menu alla volta. Esc o un clic fuori li richiudono. */
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.getElementById("menu-mobile");
+const seguiBtn = document.getElementById("segui-btn");
+const menuSocial = document.getElementById("menu-social");
+const setMenu = open => { if (!menu) return; menu.hidden = !open; menuBtn.setAttribute("aria-expanded", open ? "true" : "false"); };
+const setSocial = open => { if (!menuSocial) return; menuSocial.hidden = !open; seguiBtn.setAttribute("aria-expanded", open ? "true" : "false"); };
 if (menuBtn && menu) {
-  const setMenu = open => { menu.hidden = !open; menuBtn.setAttribute("aria-expanded", open ? "true" : "false"); };
   menuBtn.addEventListener("click", () => {
     const apri = menu.hidden;
+    setSocial(false);
     setMenu(apri);
     if (apri) contaEvento("menu-capitoli");
   });
   menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
-  document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
 }
+// «Segui il progetto»: apre le tre icone dei social (l'evento «segui-progetto» parte da contatore.js)
+if (seguiBtn && menuSocial) {
+  seguiBtn.addEventListener("click", () => { const apri = menuSocial.hidden; setMenu(false); setSocial(apri); });
+  menuSocial.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setSocial(false)));
+  document.addEventListener("click", e => { if (!menuSocial.hidden && !e.target.closest(".nav-right")) setSocial(false); });
+}
+document.addEventListener("keydown", e => { if (e.key === "Escape") { setMenu(false); setSocial(false); } });
 
 /* ---------- runa attiva: si accende in oro la runa del capitolo che stai guardando ---------- */
 (() => {
