@@ -80,19 +80,28 @@ RISPONDI SEMPRE IN ITALIANO.
 
 ## La demo (demo.js) = l'apertura
 - Tasto grande «Prova MIMIR». MIMIR saluta usando SOLO quello che il
-  browser sa già: buongiorno/buon pomeriggio/buonasera, giorno e ora,
-  dispositivo (iPhone, iPad, Mac, Windows, Android…), zona dal fuso
-  orario (es. Europe/Rome → «dall'Italia», altrimenti «dalle tue parti»).
-- Testo del saluto: «Buonasera. È martedì, sono le 21:40. Mi stai
+  browser sa già: ora, giorno, dispositivo e fuso orario.
+- Il saluto è composto da pezzi audio in media/voce/saluto/, in
+  quest'ordine, con 150 ms di pausa tra i pezzi:
+  saluto (buongiorno 5–12, pomeriggio 12–18, buonasera 18–24,
+  notte 0–5 = «Sei sveglio a quest'ora?») → giorno della settimana →
+  momento (mattina 5–9, sera 20–24, nessuno negli altri orari) →
+  dispositivo (iphone, android = telefono Android, mac, windows; iPad,
+  tablet Android, Chromebook, Linux e tutti gli altri = altro) → zona
+  (italia solo se il fuso è Europe/Rome, altrimenti altrove) → saluto-fine.
+- Esempio: «Buonasera. È martedì. La giornata è quasi finita. Mi stai
   guardando da un iPhone, dall'Italia. Io sono MIMIR. Odino diede un
   occhio per la saggezza. A te è bastato un browser.»
-- L'ora del saluto è sempre in cifre: «sono le 12:19», «sono le 00:05»
-  (mai «è mezzogiorno», «è mezzanotte» o «è l'una»).
-- L'onda si muove SOLO quando c'è la voce: ferma durante il saluto
-  scritto, quando parli tu o se la voce è spenta.
-- Il saluto è SOLO sottotitolo, scritto lettera per lettera, senza voce
-  (è dinamico: non si può registrare). La voce parte dalla frase dopo:
-  «Ti faccio sentire come comincia una mattina con me.», poi un recap
+- Il sottotitolo dice esattamente le stesse parole dell'audio: i testi
+  dei pezzi sono in demo.js (pezziSaluto) e vanno cambiati insieme agli
+  audio. Se un pezzo manca, si salta solo quel pezzo (audio e testo).
+- L'ora esatta è scritta piccola sopra il sottotitolo («21:40»,
+  «00:05»), mai pronunciata.
+- Con la voce spenta il saluto è scritto lettera per lettera, con le
+  stesse parole.
+- L'onda si muove SOLO quando c'è la voce: ferma quando parli tu o se
+  la voce è spenta.
+- Dopo il saluto: «Ti faccio sentire come comincia una mattina con me.», poi un recap
   inventato SENZA nomi di persona, poi la chiusura: «L'ora, il giorno,
   il dispositivo e la zona li ho capiti dal tuo browser. Non sono usciti
   da qui. Il resto era inventato.»
@@ -105,12 +114,12 @@ RISPONDI SEMPRE IN ITALIANO.
   per ogni battuta di MIMIR (campo «audio» in demo.js: mattina-1…4,
   chiusura, recap-1…4, casa-1…3, memoria-1…3, anomalie-1…4, salta).
   «Salta» durante il saluto → chiusura.mp3; nelle altre scene → salta.mp3.
-  Le battute «TU» e il saluto personalizzato restano solo testo.
+  Le battute «TU» restano solo testo.
 - Niente voce del browser (speechSynthesis): tolta del tutto.
 - Interruttore «Voce» acceso di default. Spento = solo sottotitoli.
 - iPhone: gli audio passano da un solo elemento <audio id="voce">,
-  sbloccato a ogni tocco sui tasti della demo; al primo tocco si
-  precaricano tutti gli audio.
+  sbloccato a ogni tocco sui tasti della demo; al primo tocco su
+  «Prova MIMIR» si precaricano tutti gli audio, pezzi del saluto compresi.
 - Se un audio non si carica, la battuta resta in sottotitolo e la demo
   va avanti.
 - L'onda segue il volume vero dell'audio (calcolato al precaricamento);

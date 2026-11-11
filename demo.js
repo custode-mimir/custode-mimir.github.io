@@ -4,68 +4,66 @@
      dispositivo e fuso orario. Viene calcolato qui, al momento:
      non viene salvato e non viene mandato da nessuna parte
      (nemmeno a GoatCounter).
-   - Il saluto è solo sottotitolo, scritto lettera per lettera, senza voce.
-     La voce parte dalla frase successiva: sono gli audio veri di MIMIR
-     (voce Kokoro) nella cartella media/voce/. Se un audio non si carica,
-     la battuta resta solo in sottotitolo.
+   - Il saluto è composto da pezzi audio (media/voce/saluto/); le altre
+     battute sono gli audio veri di MIMIR (voce Kokoro) in media/voce/.
+     Se un audio non si carica, la battuta resta solo in sottotitolo
+     (un pezzo del saluto mancante invece si salta).
    - Tutto il resto è scritto a mano, con dati inventati.
    Per modificare le scene, cambia MATTINA e SCENES qui sotto.
    ========================================================= */
 
 /* ---------- 1. Il saluto personalizzato ---------- */
+// Il saluto è fatto di pezzi audio (media/voce/saluto/), scelti al momento in base a
+// ora, giorno, dispositivo e fuso orario. Ogni pezzo ha il suo testo: il sottotitolo
+// dice esattamente le stesse parole dell'audio. L'ora esatta si scrive, non si dice.
 
-// fuso orario -> da dove ci stai guardando (zona approssimativa)
-const ZONE = {
-  "Europe/Rome": "dall'Italia", "Europe/Vatican": "dall'Italia", "Europe/San_Marino": "da San Marino",
-  "Europe/Zurich": "dalla Svizzera", "Europe/Paris": "dalla Francia", "Europe/Berlin": "dalla Germania",
-  "Europe/Madrid": "dalla Spagna", "Europe/Lisbon": "dal Portogallo", "Europe/London": "dal Regno Unito",
-  "Europe/Dublin": "dall'Irlanda", "Europe/Amsterdam": "dai Paesi Bassi", "Europe/Brussels": "dal Belgio",
-  "Europe/Luxembourg": "dal Lussemburgo", "Europe/Vienna": "dall'Austria", "Europe/Prague": "dalla Repubblica Ceca",
-  "Europe/Warsaw": "dalla Polonia", "Europe/Budapest": "dall'Ungheria", "Europe/Bucharest": "dalla Romania",
-  "Europe/Zagreb": "dalla Croazia", "Europe/Ljubljana": "dalla Slovenia", "Europe/Athens": "dalla Grecia",
-  "Europe/Malta": "da Malta", "Europe/Stockholm": "dalla Svezia", "Europe/Oslo": "dalla Norvegia",
-  "Europe/Copenhagen": "dalla Danimarca", "Europe/Helsinki": "dalla Finlandia", "Atlantic/Reykjavik": "dall'Islanda",
-  "Europe/Kyiv": "dall'Ucraina", "Europe/Kiev": "dall'Ucraina", "Europe/Istanbul": "dalla Turchia",
-  "Europe/Moscow": "dalla Russia", "Asia/Jerusalem": "da Israele", "Asia/Dubai": "dagli Emirati Arabi",
-  "Asia/Kolkata": "dall'India", "Asia/Calcutta": "dall'India", "Asia/Shanghai": "dalla Cina", "Asia/Hong_Kong": "da Hong Kong",
-  "Asia/Singapore": "da Singapore", "Asia/Tokyo": "dal Giappone", "Asia/Seoul": "dalla Corea del Sud",
-  "Africa/Cairo": "dall'Egitto", "Africa/Johannesburg": "dal Sudafrica",
-  "America/New_York": "dagli Stati Uniti", "America/Chicago": "dagli Stati Uniti", "America/Denver": "dagli Stati Uniti",
-  "America/Phoenix": "dagli Stati Uniti", "America/Los_Angeles": "dagli Stati Uniti", "America/Anchorage": "dagli Stati Uniti",
-  "Pacific/Honolulu": "dagli Stati Uniti", "America/Toronto": "dal Canada", "America/Vancouver": "dal Canada",
-  "America/Montreal": "dal Canada", "America/Mexico_City": "dal Messico", "America/Sao_Paulo": "dal Brasile",
-  "America/Argentina/Buenos_Aires": "dall'Argentina", "America/Buenos_Aires": "dall'Argentina",
-  "Australia/Sydney": "dall'Australia", "Australia/Melbourne": "dall'Australia", "Australia/Perth": "dall'Australia",
-  "Pacific/Auckland": "dalla Nuova Zelanda"
-};
+const GIORNI = [
+  ["giorno-domenica", "È domenica."], ["giorno-lunedi", "È lunedì."], ["giorno-martedi", "È martedì."],
+  ["giorno-mercoledi", "È mercoledì."], ["giorno-giovedi", "È giovedì."], ["giorno-venerdi", "È venerdì."],
+  ["giorno-sabato", "È sabato."]
+];
 
-function zona() {
+// solo il fuso Europe/Rome conta come Italia, tutto il resto è «altrove»
+function zonaPezzo() {
   let tz = "";
   try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""; } catch (e) {}
-  return ZONE[tz] || "dalle tue parti";
+  return tz === "Europe/Rome" ? ["zona-italia", "dall'Italia."] : ["zona-altrove", "da un posto lontano da qui."];
 }
 
-function dispositivo() {
+// iPhone, telefono Android, Mac e Windows hanno il loro pezzo; iPad, tablet Android,
+// Chromebook, Linux e tutti gli altri usano «un dispositivo che non conosco»
+function dispositivoPezzo() {
   const ua = navigator.userAgent || "";
-  if (/iPhone/.test(ua)) return "un iPhone";
-  if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "un iPad";
-  if (/Android/.test(ua)) return /Mobile/.test(ua) ? "un telefono Android" : "un tablet Android";
-  if (/Mac/.test(ua)) return "un Mac";
-  if (/Windows/.test(ua)) return "un computer Windows";
-  if (/CrOS/.test(ua)) return "un Chromebook";
-  if (/Linux/.test(ua)) return "un computer Linux";
-  return "questo dispositivo";
+  const altro = ["disp-altro", "Mi stai guardando da un dispositivo che non conosco,"];
+  if (/iPhone/.test(ua)) return ["disp-iphone", "Mi stai guardando da un iPhone,"];
+  if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return altro; // iPad
+  if (/Android/.test(ua)) return /Mobile/.test(ua) ? ["disp-android", "Mi stai guardando da un telefono Android,"] : altro;
+  if (/CrOS/.test(ua)) return altro;
+  if (/Mac/.test(ua)) return ["disp-mac", "Mi stai guardando da un Mac,"];
+  if (/Windows/.test(ua)) return ["disp-windows", "Mi stai guardando da un computer Windows,"];
+  return altro;
 }
 
-function saluto() {
-  const now = new Date();
-  const h = now.getHours(), m = now.getMinutes();
-  const buon = h >= 5 && h < 12 ? "Buongiorno" : h >= 12 && h < 18 ? "Buon pomeriggio" : "Buonasera";
-  const giorno = now.toLocaleDateString("it-IT", { weekday: "long" });
-  // l'ora sempre in cifre: «sono le 12:19», «sono le 00:05»
-  const ora = "sono le " + (h === 0 ? "00" : h) + ":" + String(m).padStart(2, "0");
-  return `${buon}. È ${giorno}, ${ora}. Mi stai guardando da ${dispositivo()}, ${zona()}. ` +
-         `Io sono MIMIR. Odino diede un occhio per la saggezza. A te è bastato un browser.`;
+// i pezzi del saluto, in ordine: saluto → giorno → momento → dispositivo → zona → fine
+function pezziSaluto(now) {
+  const h = now.getHours();
+  const pezzi = [];
+  if (h >= 5 && h < 12)       pezzi.push(["saluto-buongiorno", "Buongiorno."]);
+  else if (h >= 12 && h < 18) pezzi.push(["saluto-pomeriggio", "Buon pomeriggio."]);
+  else if (h >= 18)           pezzi.push(["saluto-buonasera", "Buonasera."]);
+  else                        pezzi.push(["saluto-notte", "Sei sveglio a quest'ora?"]); // da mezzanotte alle 5
+  pezzi.push(GIORNI[now.getDay()]);
+  if (h >= 5 && h < 9)  pezzi.push(["momento-mattina", "Mattina presto, per me è l'ora del recap."]);
+  if (h >= 20)          pezzi.push(["momento-sera", "La giornata è quasi finita."]);
+  pezzi.push(dispositivoPezzo());
+  pezzi.push(zonaPezzo());
+  pezzi.push(["saluto-fine", "Io sono MIMIR. Odino diede un occhio per la saggezza. A te è bastato un browser."]);
+  return pezzi.map(([nome, text]) => ({ audio: "saluto/" + nome, text }));
+}
+
+// l'ora esatta, scritta piccola sopra il sottotitolo: «21:40», «00:05»
+function oraScritta(now) {
+  return String(now.getHours()).padStart(2, "0") + ":" + String(now.getMinutes()).padStart(2, "0");
 }
 
 /* ---------- 2. Le scene (dati inventati, senza nomi di persona) ---------- */
@@ -121,6 +119,7 @@ const SCENES = {
 const demoEl   = document.querySelector(".demo");
 const subWho   = document.getElementById("sub-who");
 const subText  = document.getElementById("sub-text");
+const subTime  = document.getElementById("sub-time");
 const chip     = document.getElementById("demo-cards");
 const playBtn  = document.getElementById("demo-play");
 const skipBtn  = document.getElementById("demo-skip");
@@ -170,7 +169,12 @@ const player = document.getElementById("voce");
 const CARTELLA = "media/voce/";
 const NOMI_AUDIO = ["mattina-1", "mattina-2", "mattina-3", "mattina-4", "chiusura",
   "recap-1", "recap-2", "recap-3", "recap-4", "casa-1", "casa-2", "casa-3",
-  "memoria-1", "memoria-2", "memoria-3", "anomalie-1", "anomalie-2", "anomalie-3", "anomalie-4", "salta"];
+  "memoria-1", "memoria-2", "memoria-3", "anomalie-1", "anomalie-2", "anomalie-3", "anomalie-4", "salta",
+  // i pezzi del saluto
+  ...["saluto-buongiorno", "saluto-pomeriggio", "saluto-buonasera", "saluto-notte",
+      "giorno-lunedi", "giorno-martedi", "giorno-mercoledi", "giorno-giovedi", "giorno-venerdi", "giorno-sabato", "giorno-domenica",
+      "momento-mattina", "momento-sera", "disp-iphone", "disp-android", "disp-mac", "disp-windows", "disp-altro",
+      "zona-italia", "zona-altrove", "saluto-fine"].map(n => "saluto/" + n)];
 const volumi = {};      // nome -> volume dell'audio ogni 50 ms (da 0 a 1), per muovere l'onda
 let precaricati = false;
 let sblocco = false;
@@ -220,31 +224,66 @@ function inviluppo(audio) {
 
 let fermaVoce = null; // serve a interrompere l'audio se premi «Salta» o scegli un'altra scena
 
-// fa dire una battuta a MIMIR. Si risolve con true se l'audio è stato suonato,
-// false se la battuta resta solo sottotitolo (voce spenta, audio mancante o bloccato)
-function speak(step) {
+// fa partire un audio di media/voce/. Si risolve con:
+//   "ok" = suonato fino in fondo · "fermato" = interrotto (Salta, altra scena)
+//   "errore" = non si carica o è bloccato
+// quandoParte() viene chiamata appena l'audio parte davvero
+function suona(nome, quandoParte) {
   return new Promise(resolve => {
-    const pausa = () => setTimeout(() => resolve(false), 900 + step.text.length * 45);
-    if (!voiceOn.checked || !step.audio || !player) return pausa();
+    if (!player) return resolve("errore");
     let finito = false;
-    const chiudi = suonato => {
+    const chiudi = esito => {
       if (finito) return; finito = true;
       clearTimeout(scorta); player.onended = player.onerror = null; fermaVoce = null;
+      if (esito === "errore") player.pause();
       animateWave(false);
-      resolve(suonato);
+      resolve(esito);
     };
-    const nonVa = () => { if (finito) return; finito = true; clearTimeout(scorta); player.pause(); player.onended = player.onerror = null; fermaVoce = null; animateWave(false); pausa(); };
     // rete lenta o audio bloccato: dopo un po' si va avanti comunque
-    const scorta = setTimeout(() => nonVa(), 15000);
-    fermaVoce = () => { player.pause(); chiudi(false); };
+    const scorta = setTimeout(() => chiudi("errore"), 15000);
+    fermaVoce = () => { player.pause(); chiudi("fermato"); };
     sblocco = false; player.muted = false;
-    player.onended = () => chiudi(true);
-    player.onerror = nonVa;
-    player.src = CARTELLA + step.audio + ".mp3";
+    player.onended = () => chiudi("ok");
+    player.onerror = () => chiudi("errore");
+    player.src = CARTELLA + nome + ".mp3";
     const p = player.play();
-    const parte = () => { if (!finito) { setState("speaking"); level(1); animateWave(true, step.audio); } };
-    if (p && p.then) p.then(parte).catch(nonVa); else parte();
+    const parte = () => { if (!finito) { if (quandoParte) quandoParte(); setState("speaking"); level(1); animateWave(true, nome); } };
+    if (p && p.then) p.then(parte).catch(() => chiudi("errore")); else parte();
   });
+}
+
+// fa dire una battuta a MIMIR. Se la voce è spenta o l'audio non va,
+// la battuta resta in sottotitolo per il tempo di leggerla
+async function speak(step) {
+  const leggi = () => wait(900 + step.text.length * 45);
+  if (!voiceOn.checked || !step.audio) { await leggi(); return false; }
+  const esito = await suona(step.audio);
+  if (esito === "errore") await leggi();
+  return esito === "ok";
+}
+
+// il saluto: ora scritta in piccolo, poi i pezzi audio uno dopo l'altro (150 ms tra uno e l'altro).
+// Il sottotitolo si allunga pezzo per pezzo, con le stesse parole dell'audio.
+// Se un pezzo manca, si salta solo quel pezzo. Con la voce spenta: testo scritto lettera per lettera.
+async function diciSaluto(id) {
+  const now = new Date();
+  const pezzi = pezziSaluto(now);
+  showLine("mimir", "");
+  subTime.textContent = oraScritta(now);
+  subTime.hidden = false;
+  if (!voiceOn.checked) {
+    await typeLine(pezzi.map(p => p.text).join(" "), id);
+    return;
+  }
+  const detti = [];
+  for (let i = 0; i < pezzi.length; i++) {
+    if (id !== runId) return;
+    const esito = await suona(pezzi[i].audio, () => { detti.push(pezzi[i].text); subText.textContent = detti.join(" "); });
+    if (id !== runId || esito === "fermato") return;
+    setState(null); level(0.12);
+    if (i < pezzi.length - 1) await wait(150);
+  }
+  await wait(700);
 }
 
 function setState(state) {
@@ -252,11 +291,12 @@ function setState(state) {
   if (state) demoEl.classList.add(state);
 }
 function showLine(who, text) {
+  subTime.hidden = true; // l'ora scritta compare solo durante il saluto (diciSaluto)
   subWho.textContent = who === "user" ? "TU" : "MIMIR";
   subText.textContent = text;
 }
 
-// sottotitolo scritto lettera per lettera (solo per il saluto, senza voce)
+// sottotitolo scritto lettera per lettera (solo per il saluto con la voce spenta)
 async function typeLine(text, id) {
   subWho.textContent = "MIMIR";
   subText.textContent = "";
@@ -323,7 +363,7 @@ async function play(nome) {
 
   let ok;
   if (nome === "saluto") {
-    await typeLine(saluto(), id);
+    await diciSaluto(id);
     ok = id === runId && await runLines(MATTINA, id);
   } else {
     ok = await runLines(SCENES[nome], id);
