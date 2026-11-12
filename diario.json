@@ -17,6 +17,7 @@
     { "data": "2026-11-11", "titolo": "Profilo demo", "descrizione": "MIMIR ha un profilo con dati finti, separato da quello vero, per mostrarlo in video senza dati personali." },
     { "data": "2026-11-11", "titolo": "Ora, data e recap esatti", "descrizione": "Ora, data, impegni e meteo li compone MIMIR direttamente dai dati, con orari e numeri detti in parole." },
     { "data": "2026-11-12", "titolo": "Registrate le riprese del primo episodio", "descrizione": "MIMIR è andato davanti alla telecamera." },
-    { "data": "2026-11-12", "titolo": "Recap più corto", "descrizione": "Posta, agenda e meteo in pochi secondi. L'elenco completo delle mail solo se lo chiedi." }
+    { "data": "2026-11-12", "titolo": "Recap più corto", "descrizione": "Posta, agenda e meteo in pochi secondi. L'elenco completo delle mail solo se lo chiedi." },
+    { "data": "2026-11-12", "titolo": "Memoria più rapida", "descrizione": "Alle domande sui ricordi privati, come \"dove sono i documenti dell'auto?\", MIMIR ora risponde subito." }
   ]
 }
