@@ -15,6 +15,7 @@
     { "data": "2026-10-29", "titolo": "Il recap", "descrizione": "Su richiesta, MIMIR riassume la giornata: impegni, posta e meteo in un unico discorso." },
     { "data": "2026-11-11", "titolo": "Avvio da maggiordomo", "descrizione": "All'apertura MIMIR saluta con una sola frase e parla dei suoi sistemi solo se qualcosa non va." },
     { "data": "2026-11-11", "titolo": "Profilo demo", "descrizione": "MIMIR ha un profilo con dati finti, separato da quello vero, per mostrarlo in video senza dati personali." },
-    { "data": "2026-11-11", "titolo": "Ora, data e recap esatti", "descrizione": "Ora, data, impegni e meteo li compone MIMIR direttamente dai dati, con orari e numeri detti in parole." }
+    { "data": "2026-11-11", "titolo": "Ora, data e recap esatti", "descrizione": "Ora, data, impegni e meteo li compone MIMIR direttamente dai dati, con orari e numeri detti in parole." },
+    { "data": "2026-11-12", "titolo": "Registrate le riprese del primo episodio", "descrizione": "MIMIR è andato davanti alla telecamera." }
   ]
 }
